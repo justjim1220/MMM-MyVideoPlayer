@@ -18,7 +18,7 @@ modules: [
 			module: "MMM-MyVideoPlayer",
 			position: "top_center",
 			config: {
-				videos: ["video_one", "two", "3", "four", "Stay"]
+				videos: ["video_one", "two", "3", "fourth_video", "Rx_by_Theory"]
 			}
 		},
 ]
@@ -32,6 +32,7 @@ git clone https://github.com/justjim1220/MMM-MyVideoPlayer.git
 
 ## Other Info...
 ```
+videos should be less than 25mb to upload to GitHub
 can add as many videos as you like.
 must be named in single words or with the underscore "_" between the words. 
 IE: "video_one"
