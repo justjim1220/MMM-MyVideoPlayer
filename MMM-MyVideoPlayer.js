@@ -12,10 +12,7 @@
 Module.register("MMM-MyVideoPlayer", {
   // Default module config.
   defaults: {
-    height: "640px",
-    width: "800px",
     initialLoadDelay: 6250,
-
     videos: [""],
   },
 
