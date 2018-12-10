@@ -5,7 +5,9 @@ The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirro
 
 ## Screenshots
 ![Shows the current error form console log](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(170).png)
+
 ![Shows what it looks like at this point](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(171).png)
+
 ![image placeholder == ](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/
 
 ## Using the module...
