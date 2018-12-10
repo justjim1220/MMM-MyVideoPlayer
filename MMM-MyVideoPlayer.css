@@ -7,3 +7,30 @@
     line-height: 105%;
     font-size: 40px;
 }
+
+.MMM-MyVideoPlayer .navMenu {
+    display: flex;
+    align-items: stretch;
+}
+
+.MMM-MyVideoPlayer .navBtn {
+    z-index: 1;
+    
+    border: solid 2px #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MMM-MyVideoPlayer .navBtn:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.MMM-MyVideoPlayer .navLink {
+    text-underline-position: below;
+} 
+
+.MMM-MyVideoPlayer .navText {
+    margin: -5px 0;
+}
