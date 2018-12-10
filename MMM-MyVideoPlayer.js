@@ -45,19 +45,10 @@ Module.register("MMM-MyVideoPlayer", {
 		return ["MMM-MyVideoPlayer.css"];
 	},
 
-	// Override the default NotificationRecieved function
-	// notificationReceived: function(notification, payload, sender) {
-	//	if (notification === "CHANGED_VIDEO") {
-	//	  this.selected = payload.to;
-	//	  this.updateDom(0);
-	//	}
-	//},
-
 	// Define start sequence.
 	start: function () {
 		Log.info("Starting module: " + this.name);
 
-		//this.scheduleUpdate();
 
 		"use strict";
 	},
@@ -72,7 +63,7 @@ Module.register("MMM-MyVideoPlayer", {
 			wrapper.classList.add("font");
 			wrapper.innerHTML = "Please add videos to your config array as explained in Readme";
 		} else if (videos != "") {
-			wrapper.innerHTML = `<video controls height='600' width='1066' id="video"><source src="file:///E:/MagicMirror-test/modules/MMM-MyVideoPlayer/videos/${videos}.mp4" type="video/mp4"></video>`;
+			wrapper.innerHTML = `<video controls height='600' width='1066' id="video"><source src="file:///C:/MagicMirror/modules/MMM-MyVideoPlayer/videos/${videos}.mp4" type="video/mp4"></video>`;
 		}
 		console.log(wrapper.innerHTML);
 
