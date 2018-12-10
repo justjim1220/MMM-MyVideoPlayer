@@ -16,13 +16,36 @@ To use this module, add it to the modules array in the 'config/config.js' file:
 ```
 modules: [
 	{
-			disabled: false,
-			module: "MMM-MyVideoPlayer",
-			position: "top_center",
-			config: {
-				videos: ["video_one", "two", "3", "fourth_video", "Rx_by_Theory"]
+		disabled: false,
+		module: "MMM-MyVideoPlayer",
+		position: "top_center",
+		config: {
+			videos: ["video_one", "Rx_by_Theory", "3", "fourth_video", "Hallelujah"],
+			
+			// button configuration //
+			showBorder: true,
+			minWidth: "212px",
+			minHeight: "50px",
+			direction: "row",
+			buttons: {
+				"video_one": {
+					text: "Video 1"
+				},
+				"Rx_by_Theory": {
+					text: "Video 2"
+				},
+				"3": {
+					text: "Video 3"
+				},
+				"fourth_video": {
+					text: "Video 4"
+				},
+				"Hallelujah": {
+					text: "Video 5"
+				}
 			}
-		},
+		}
+	},
 ]
 ```
 
@@ -36,12 +59,12 @@ git clone https://github.com/justjim1220/MMM-MyVideoPlayer.git
 ```
 videos should be less than 25mb to upload to GitHub
 can add as many videos as you like.
+List in videos should be aligned with the list in buttons.
 must be named in single words or with the underscore "_" between the words. 
 IE: "video_one"
  
-Hope you all like it!
+Hope y'all like it!
 ```
-
 
 
 ## Acknowledgements...
