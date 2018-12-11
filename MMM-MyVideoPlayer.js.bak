@@ -1,0 +1,180 @@
+/* Magic Mirror
+ * Module: MMM-VideoPlayer
+ *
+ * By justjim1220
+ *
+ * MIT Licensed.
+ *
+ * Brought to you by the makers of Cheyenne Cigars
+ * and my very own homemade Southern Sweet Tea.
+*/
+
+Module.register("MMM-MyVideoPlayer", {
+	// Default module config.
+	defaults: {
+		initialLoadDelay: 6250,
+
+		videosArray: [
+			{
+				"id": 1,
+				"name": "video_one",
+				"source": "/videos/video_one.mp4"
+			},
+			{
+				"id": 2,
+				"name": "Rx_by_Theory",
+				"source": "/videos/Rx_by_Theory.mp4"
+			},
+			{
+				"id": 3,
+				"name": "three",
+				"source": "three.mp4"
+			},
+			{
+				"id": 4,
+				"name": "fourth_video",
+				"source": "fourth_video.mp4"
+			},
+			{
+				"id": 5,
+				"name": "Hallelujah",
+				"source": "Hallelujah.mp4"
+			}
+		],
+
+		showBorder: true,
+		minWidth: "212px",
+		minHeight: "50px",
+		direction: "row",
+		buttons: {
+			"video_one": {
+				text: "Video 1"
+			},
+
+			"Rx_by_Theory": {
+				text: "Video 2"
+			},
+
+			"three": {
+				text: "Video 3"
+			},
+
+			"fourth_video": {
+				text: "Video 4"
+			},
+
+			"Hallelujah": {
+				text: "Video 5"
+			}
+		},
+
+		// videos:
+	},
+
+	requiresversion: "2.1.0",
+
+	getStyles: function () {
+		return ["MMM-MyVideoPlayer.css"];
+	},
+
+	// Define start sequence.
+	start: function () {
+		console.log("Starting module: " + this.name);
+
+		//this.videos = [];
+		//this.buttons = {};
+		//this.playlist = {};
+
+		"use strict";
+	},
+
+	// Override dom generator.
+	getDom: function () {
+		var wrapper = document.createElement("div");
+		var videos = this.config.videos;
+		videos = videos[Math.floor(Math.random() * videos.length)];
+
+		if (videos === "") {
+			wrapper.classList.add("font");
+			wrapper.innerHTML = "Please add videos to your config array as explained in Readme";
+		} else if (videos != "") {
+
+			wrapper.innerHTML = `<div id="vOverlay" style="position:relative; width:1078px; height:600px; z-index:2;"></div>
+			<video style="position:relative; bottom:-28px; z-index:1; width:1078px; height:600px;" id=videoPlayer controls="controls" onclick="this.play()">
+			<source src="playlist" "type="video/mp4">
+			<p id="demo"></p>
+			</video>`;
+		}
+
+		`<script>
+		var vid = document.getElementById("videoPlayer");
+		var vidV = document.getElementById("vOverlay");
+
+		vidV.addEventListener("play", function()
+			{ vid.play(); };
+
+		vid.onclick = function() {
+			if (!vid.paused) {
+				console.log("start playback");
+				vid.play();
+				vid.controls = null;
+				vid.firstChild.nodeValue = 'Pause';
+			} else {
+				console.log("pause playback");
+				vid.pause();
+				vid.controls="controls";
+				vid.firstChild.nodeValue = 'Play';
+			}
+		});
+		</script>`;
+
+		console.log(wrapper.innerHTML);
+
+		var menu = document.createElement("span");
+		menu.className = "navMenu";
+		menu.id = this.identifier + "_menu";
+		menu.style.flexDirection = this.config.direction;
+
+		for (var name in this.config.buttons) {
+			menu.appendChild(this.createButton(this, name, this.config.buttons[name]));
+		}
+		wrapper.appendChild(menu);
+
+		return wrapper;
+	},
+
+	createPlayList: function (self, name, data) {
+		var playlist = document.createElement("span");
+		playlist.id = self.identifier + "_playlist_" + name;
+		playlist.className = "navPlayList";
+		// playlist.id = this.identifier + "_playlist";
+		for (var name in this.config.videos) {
+			playlist.appendChild(this.createPlayList(this, name, this.config.videos[name]));
+		}
+		wrapper.appendChild(playlist);
+
+		return playlist;
+	},
+
+	createButton: function (self, name, data) {
+		var item = document.createElement("span");
+		item.id = self.identifier + "_button_" + name;
+		item.className = "navBtn";
+		item.style.minWidth = self.config.minWidth;
+		item.style.minHeight = self.config.minHeight;
+		item.style.flexDirection = self.config.direction;
+
+		if (!self.config.showBorder) {
+			item.style.borderColor = "black";
+		}
+
+		if (data.text) {
+			var text = document.createElement("span");
+			text.className = "navText";
+			text.innerHTML = data.text;
+
+			item.appendChild(text);
+		}
+		return item;
+	}
+});

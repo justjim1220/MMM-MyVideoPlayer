@@ -1,0 +1,24 @@
+{
+  "name": "mmm-myvideoplayer",
+  "version": "1.0.0",
+  "description": "A simple video player for MagicMirror2",
+  "main": "MMM-MyVideoPlayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justjim1220/MMM-MyVideoPlayer.git"
+  },
+  "keywords": [
+    "video",
+    "player",
+    "MagicMirror"
+  ],
+  "author": "justjim1220 - Jim Hallock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justjim1220/MMM-MyVideoPlayer/issues"
+  },
+  "homepage": "https://github.com/justjim1220/MMM-MyVideoPlayer#readme"
+}

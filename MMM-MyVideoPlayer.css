@@ -1,36 +1,39 @@
 .MMM-MyVideoPlayer {
-    margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 .MMM-MyVideoPlayer .font {
-    padding-top: 30px;
-    line-height: 105%;
-    font-size: 40px;
+  padding-top: 30px;
+  line-height: 105%;
+  font-size: 40px;
 }
 
-.MMM-MyVideoPlayer .navMenu {
-    display: flex;
-    align-items: stretch;
+.MMM-MyVideoPlayer .navigation-menu {
+  display: flex;
+  align-items: stretch;
 }
 
-.MMM-MyVideoPlayer .navBtn {
-    z-index: 1;
-    
-    border: solid 2px #999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.MMM-MyVideoPlayer .navigation-button {
+  z-index: 1;
+  border: solid 2px #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4511e;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 
-.MMM-MyVideoPlayer .navBtn:hover {
-    color: #fff;
-    cursor: pointer;
+.MMM-MyVideoPlayer .navigation-button:hover {
+  opacity: 1;
 }
 
-.MMM-MyVideoPlayer .navLink {
-    text-underline-position: below;
-} 
-
-.MMM-MyVideoPlayer .navText {
-    margin: -5px 0;
+.MMM-MyVideoPlayer .navigation-text {
+  margin: -5px 0;
 }

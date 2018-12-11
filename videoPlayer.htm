@@ -1,0 +1,106 @@
+// A dead simple and fully responsive Video Playlist Player that dynamically loads video files from a JSON file.
+
+// Written in pure JavaScript and CSS/CSS3. Without any 3rd dependencies.
+
+// How to use it:
+// Create the html for the video player & playlist.
+
+
+<div class="container-player">
+	<div id="mediaPlayer">
+		<div class="lds-ring" id=preload><div></div><div></div><div></div><div></div></div>
+		<video id='media-video' preload>
+			<source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4" type='video/mp4'>
+			<source src='parrots.webm' type='video/webm'>
+		</video>
+		<div id="controls">
+			<button id=play><i class="fas fa-pause"></i></button>
+			<button id=audioVolume class="fas fa-volume-off"></button>
+			<div id="progressBar">
+				<div id="progress"></div>
+			</div>
+			<div id="timer">
+				<span id="start"> 0 : 00</span>
+			</div>
+			<button id=expand><i class="fas fa-expand"></i></button>
+		</div>
+	</div>
+	<div id="playlist">
+	</div>
+</div>
+
+
+
+// Load the Font Awesome for the video controls.
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+// Load the Video Playlist Player’s JavaScript and CSS files.
+
+<link rel="stylesheet" href="ocplayer.min.css">
+<script src="ojcplayer.min.js"></script>
+
+
+
+// Specify the video information (name, source, duration, cover image) in the video.json.
+
+[
+  {
+      "id" : 0,
+      "name" : "Devstories from google",
+      "source" : "https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4",
+      "duration" : "4:34",
+      "img" : "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&h=90&sharp=10&q=50"
+  },{
+     "id" : 1,
+      "name" : "Vida marina - Oceano",
+      "source" : "http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4",
+      "duration" : "4:34",
+      "img" : "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&h=90&sharp=10&q=50"
+  },{
+      "id":2,
+      "name" : "Profundidades del oceano",
+      "source" : "http://thenewcode.com/assets/videos/ocean-small.mp4",
+      "duration" : "1:34",
+      "img" : "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&h=90&sharp=10&q=50"
+  },{
+      "id": 3,
+      "name" : "Lo angeles timelapse",
+      "source" : "http://thenewcode.com/assets/videos/downtown-los-angeles.mp4",
+      "duration" : "3:34",
+      "img" : "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&h=90&sharp=10&q=50"
+  },{
+      "id" : 4,
+      "name" : "Panasonic test video HD",
+      "source" : "http://mirrors.standaloneinstaller.com/video-sample/Panasonic_HDC_TM_700_P_50i.mp4",
+      "duration" : "2:34",
+      "img" : "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5810396717001-brightcove-when-to-go-to-the-azores-20180726-050333.jpg?w=160&h=90&sharp=10&q=50"
+}]
+
+
+////////////////////////////////////////////////////////////////////
+
+
+<div class="videolist">
+	<nav class="vids">
+		<a class="link" href="https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4">test1</a>
+
+		<a class="link" href="https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4">test2</a>
+
+		<a class="link" href="http://www.html5videoplayer.net/videos/toystory.mp4">test3</a>
+
+		<a class="link" href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4">test4</a>
+
+		<a class="link" href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4">test5</a>
+
+		<a class="link" href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4">test6</a>
+
+		<a class="link" href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4">test7</a>
+
+		<a class="link" href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4">test8</a>
+
+		<a class="link" href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/test7.mp4">tsest9</a>
+	</nav>
+</div>
