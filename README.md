@@ -101,6 +101,7 @@ Hope you all like it!
 
 ## Acknowledgements...
 I want to thank @cowboysdude, as I got the basic idea from one of his modules!!!
-And @tosti007 as I used some of the code from his MMM-TouchNavigation to help me create the buttons
+
+And @tosti007 as I used some of the code from his MMM-TouchNavigation to help me create the buttons!
 
 Enjoy!
