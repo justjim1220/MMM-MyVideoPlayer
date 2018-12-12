@@ -5,8 +5,11 @@ The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirro
 
 ## Screenshots
 ScreenShot of the Developer's Tools Error
+
 ![ScreenShot of the Developer's Tools Error](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(436).png)
+
 ScreenShot of the output of the module
+
 ![ScreenShot of the output of the module](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(435).png)
 
 ## Using the module...
