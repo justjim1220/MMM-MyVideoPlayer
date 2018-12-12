@@ -13,56 +13,27 @@ Module.register("MMM-MyVideoPlayer", {
 	// Default module config.
 	defaults: {
 		initialLoadDelay: 5150,
-		height: "600px",
-		width: "1066px",
-		controls: "controls",
 
-		videos: [
-			{
-				"id": 1,
-				"name": "video_one",
-				"source": "./modules/MMM-MyVideoPlayer/videos/video_one.mp4"
-			},
-			{
-				"id": 2,
-				"name": "Rx_by_Theory",
-				"source": "./modules/MMM-MyVideoPlayer/videos/Rx_by_Theory.mp4"
-			},
-			{
-				"id": 3,
-				"name": "three",
-				"source": "./modules/MMM-MyVideoPlayer/videos/three.mp4"
-			},
-			{
-				"id": 4,
-				"name": "fourth_video",
-				"source": "./modules/MMM-MyVideoPlayer/videos/fourth_video.mp4"
-			},
-			{
-				"id": 5,
-				"name": "Hallelujah",
-				"source": "./modules/MMM-MyVideoPlayer/videos/Hallelujah.mp4"
-			}
-		],
+		videos: ["video_one", "Rx_by_Theory", "three", "fourth_video", "Hallelujah"],
 
 		showBorder: true,
 		minWidth: "212px",
-		minHeight: "0px",
+		minHeight: "50px",
 		direction: "row",
 		buttons: {
-			"One": {
+			"video_one": {
 				text: "Video 1"
 			},
-			"Two": {
+			"Rx_by_Theory": {
 				text: "Video 2"
 			},
-			"Three": {
+			"three": {
 				text: "Video 3"
 			},
-			"Four": {
+			"fourth_video": {
 				text: "Video 4"
 			},
-			"Five": {
+			"Hallelujah": {
 				text: "Video 5"
 			}
 		}
@@ -71,37 +42,33 @@ Module.register("MMM-MyVideoPlayer", {
 	requiresversion: "2.1.0",
 
 	getStyles: function () {
-		return ["font-awesome.css", "MMM-MyVideoPlayer.css"];
-	},
-
-	// Override the default NotificationRecieved function
-	notificationReceived: function (notification, payload, sender) {
-		if (notification === "CURRENT_VIDEO") {
-			this.selected = payload.to;
-			this.updateDom(0);
-		}
+		return ["MMM-MyVideoPlayer.css"];
 	},
 
 	// Define start sequence.
 	start: function () {
-		videos = [];
-		for (var i = 0, len = videos.length; i < len; i++) {
-			this.current_video = this.config.videos[i];
-		}
 		Log.info("Starting module: " + this.name);
-
-		//this.scheduleUpdate();
 
 		"use strict";
 	},
 
 	// Override dom generator.
 	getDom: function () {
-
 		var wrapper = document.createElement("div");
 
+		var videos = this.config.videos;
+		videos = videos[Math.floor(Math.random() * videos.length)];
+
+		if (videos == "") {
+			wrapper.classList.add("font");
+			wrapper.innerHTML = "Please add videos to your config array as explained in Readme";
+		} else if (videos != "") {
+			wrapper.innerHTML = `<video autoplay controls height='600' width='1066' id="video"><source src="modules/MMM-MyVideoPlayer/videos/${videos}.mp4" type="video/mp4"></video>`;
+		}
+		console.log(wrapper.innerHTML);
+
 		var menu = document.createElement("span");
-		menu.className = "navigation-menu";
+		menu.className = "navMenu";
 		menu.id = this.identifier + "_menu";
 		menu.style.flexDirection = this.config.direction;
 
@@ -113,36 +80,24 @@ Module.register("MMM-MyVideoPlayer", {
 		return wrapper;
 	},
 
-	createPlayer: function (self, name, data) {
-		for (var i = 0, len = videos.length; i < len; i++) {
-			var plyr = document.createElement("span");
-			plyr.id = self.identifier + "_videoPlayer_" + name;
-			plyr.className = "videoplayer";
-			plyr.style.width = self.config.width;
-			plyr.style.height = self.config.height;
-			plyr.controls = self.config.controls;
-			plyr.source = "src=./modules/MMM-MyVideoPlayer/videos/";
-			if (notificationReceived && videos === "") {
-				wrapper.classList.add("font");
-				wrapper.innerHTML = "Please add videos to your config array as explained in Readme";
-			} else if (notificationReceived && videos !== "") {
-				wrapper.innerHTML = plyr.source + self.config.videos[i].name + ".mp4"; type = video / mp4;
-			}
-			wrapper.appendChild(plyr);
-		}
-	},
-
 	createButton: function (self, name, data) {
 		var item = document.createElement("span");
 		item.id = self.identifier + "_button_" + name;
-		item.className = "navigation-button";
+		item.className = "navBtn";
 		item.style.minWidth = self.config.minWidth;
 		item.style.minHeight = self.config.minHeight;
+		item.style.flexDirection = self.config.direction;
+
+		item.addEventListener("play", function () {
+			item.play();
+		}, false);
 
 		if (self.selected === name) {
-			item.addEventListener("click", function () {
-				sendSocketNotification("CURRENT_VIDEO", name);
-			});
+			item.onclick = function () {
+				item.play();
+				item.pause();
+				item.controls = "controls";
+			}
 		}
 
 		if (!self.config.showBorder) {
@@ -151,8 +106,9 @@ Module.register("MMM-MyVideoPlayer", {
 
 		if (data.text) {
 			var text = document.createElement("span");
-			text.className = "navigation-text";
+			text.className = "navText";
 			text.innerHTML = data.text;
+
 			item.appendChild(text);
 		}
 		return item;
