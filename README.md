@@ -4,12 +4,16 @@ A simple video player for MagicMirror
 The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules>3rd Party Module</a> of the <a href=https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror</a> 
 
 ## Screenshots
+ScreenShot of the output of the module: 
 
 ![ScreenShot of the Developer's Tools Error](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(438).png)
-ScreenShot of the output of the module
+
+
+
+ScreenShot of the Developer's Tools Error: 
 
 ![ScreenShot of the output of the module](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(439).png)
-ScreenShot of the Developer's Tools Error
+
 
 ## Using the module...
 
