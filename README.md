@@ -23,13 +23,12 @@ modules: [
     {
 	disabled: false,
 	module: "MMM-MyVideoPlayer",
-	position: "bottom_center",
+	position: "middle_center",
 	config:
 	    {
 		initialLoadDelay: 5150,
-		height: "600px", // video player height
-		width: "1066px", // video player width
-		controls: "controls",
+		
+	  /**** Button Attributes ****/
 		showBorder: true,
 		minWidth: "212px",
 		minHeight: "0px",
@@ -50,15 +49,19 @@ git clone https://github.com/justjim1220/MMM-MyVideoPlayer.git
 can add as many videos as you like.
 the buttons are set up so that the videos must coincide with the buttons. 
 may need to adjust the sizes of them - width of video player divided by number of buttons
+
+the player size has to be configered within the js file:
+
+IE: line 40  --->  wrapper.innerHTML = `<video class='controls' height='675' width='1200' id="player"></video>
  
 Hope you all like it!
 ```
-
-
+========================================================================================================================================
 
 ## Acknowledgements...
-I want to thank @cowboysdude, as I got the basic idea from one of his modules!!!
+for @Sputnik & @remylpat for reqesting to have this module created!!!
 
-And @tosti007 as I used some of the code from his MMM-TouchNavigation to help me create the buttons!
+I want to thank @cowboysdude, as I got the basic idea from one of his modules!!!
+And, @Sean & @sdetweil for giving me hints on tweaks to get it up and running right!!!
 
 Enjoy!
