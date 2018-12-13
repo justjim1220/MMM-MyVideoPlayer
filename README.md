@@ -10,7 +10,7 @@ ScreenShot of the output of the module:
 
 
 
-ScreenShot of the Developer's Tools Error: 
+ScreenShot of the Developer's Tools showing No Errors.: 
 
 ![ScreenShot of the output of the module](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(439).png)
 
@@ -30,56 +30,10 @@ modules: [
 		height: "600px", // video player height
 		width: "1066px", // video player width
 		controls: "controls",
-
-		videos: [
-		    {
-			"id": 1,
-			"name": "video_one",
-			"source": "./modules/MMM-MyVideoPlayer/videos/video_one.mp4"
-		    },
-		    {
-			"id": 2,
-			"name": "Rx_by_Theory",
-			"source": "./modules/MMM-MyVideoPlayer/videos/Rx_by_Theory.mp4"
-		    },
-		    {
-			"id": 3,
-			"name": "three",
-			"source": "./modules/MMM-MyVideoPlayer/videos/three.mp4"
-		    },
-		    {
-			"id": 4,
-			"name": "fourth_video",
-			"source": "./modules/MMM-MyVideoPlayer/videos/fourth_video.mp4"
-		    },
-		    {
-			"id": 5,
-			"name": "Hallelujah",
-			"source": "./modules/MMM-MyVideoPlayer/videos/Hallelujah.mp4"
-		    }
-	        ],
-
 		showBorder: true,
 		minWidth: "212px",
 		minHeight: "0px",
 		direction: "row",
-		buttons: {
-		    "One": {
-			text: "Video 1"
-		    },
-		    "Two": {
-			text: "Video 2"
-		    },
-		    "Three": {
-			text: "Video 3"
-		    },
-		    "Four": {
-			text: "Video 4"
-		    },
-		    "Five": {
-			text: "Video 5"
-		    }
-	        }
 	    }
 	},
     ]
@@ -94,11 +48,8 @@ git clone https://github.com/justjim1220/MMM-MyVideoPlayer.git
 ## Other Info...
 ```
 can add as many videos as you like.
-the buttons are set up for 5 videos,
+the buttons are set up so that the videos must coincide with the buttons. 
 may need to adjust the sizes of them - width of video player divided by number of buttons
-the videos must coincide with the buttons.
-videos must be named in single words or with the underscore "_" between the words. 
-IE: "video_one"
  
 Hope you all like it!
 ```
