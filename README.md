@@ -4,15 +4,15 @@ A simple video player for MagicMirror
 The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules>3rd Party Module</a> of the <a href=https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror</a> 
 
 ## Screenshots
-ScreenShot of the output of the module: 
+ScreenShot of the output of the module, no video playing: 
 
-![ScreenShot of the Developer's Tools Error](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(438).png)
+![ScreenShot of no video playing](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20( ).png)
 
 
+ScreenShot of the output of the module, no video playing after button pressed: 
 
-ScreenShot of the Developer's Tools showing No Errors.: 
+![ScreenShot of video playing](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20( ).png)
 
-![ScreenShot of the output of the module](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(439).png)
 
 
 ## Using the module...
@@ -27,12 +27,6 @@ modules: [
 	config:
 	    {
 		initialLoadDelay: 5150,
-		
-	  /**** Button Attributes ****/
-		showBorder: true,
-		minWidth: "212px",
-		minHeight: "0px",
-		direction: "row",
 	    }
 	},
     ]
@@ -62,6 +56,6 @@ Hope you all like it!
 for @Sputnik & @remylpat for reqesting to have this module created!!!
 
 I want to thank @cowboysdude, as I got the basic idea from one of his modules!!!
-And, @Sean & @sdetweil for giving me hints on tweaks to get it up and running right!!!
+And, @sdetweil for giving me hints on tweaks to get it up and running right!!!
 
 Enjoy!
