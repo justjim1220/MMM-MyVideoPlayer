@@ -19,6 +19,8 @@ Module.register("MMM-MyVideoPlayer", {
 		minHeight: "50px",
 		direction: "row",
 	},
+	self:null,
+	player:null,
 
 	requiresversion: "2.1.0",
 
@@ -29,7 +31,7 @@ Module.register("MMM-MyVideoPlayer", {
 	// Define start sequence.
 	start: function () {
 		Log.info("Starting module: " + this.name);
-
+		self=this;
 		"use strict";
 	},
 
@@ -51,24 +53,46 @@ Module.register("MMM-MyVideoPlayer", {
 
 		console.log(wrapper.innerHTML);
 
-		function swapVideo() {
-			player.src = this.getAttribute("data-video-src");
-			player.load();
-			player.play();
-		}
-
-		var videoPlayButtons = document.querySelectorAll("button"),
-			player = document.getElementById("player");
-
-		for (var i = 0; i < videoPlayButtons.length; i++) {
-			videoPlayButtons[i].addEventListener("click", swapVideo);
-		}
-
 		var menu = document.createElement("span");
 		menu.className = "navMenu";
 		menu.id = this.identifier + "_menu";
 		menu.style.flexDirection = this.config.direction;
 
+		// set a timer for 1 second from now to cehck for and add handlers for all our buttons
+		setTimeout(this.addHandlers,1000);		
+
 		return wrapper;
 	},
+	swapVideo: function (button) {
+		Log.log("in handler for button="+this.getAttribute("data-video-src"));
+		self.player.src = this.getAttribute("data-video-src");
+		self.player.load();
+		self.player.play();
+	},
+
+	addHandlers  : function () {
+			Log.log("add Handlers called");
+			// get the player object from the dom
+			self.player = document.getElementById("player");
+	
+			// if present
+			if(self.player != null)
+			{
+				//get all the buttons in the object
+				var videoPlayButtons =document.getElementById("videoSelect").querySelectorAll("button");			
+
+				// set the click handler for the buttons
+				for (var i = 0; i < videoPlayButtons.length; i++) {
+					Log.log("adding button click handlers now");
+					videoPlayButtons[i].addEventListener("click", self.swapVideo);
+				}
+			}
+			// not found, wait a little more
+			else {
+				Log.log("restarting timer");
+				setTimeout(self.addHandlers,1000)
+			}
+
+	},
+
 });
