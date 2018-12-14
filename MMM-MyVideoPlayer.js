@@ -34,29 +34,20 @@ Module.register("MMM-MyVideoPlayer", {
 		"use strict";
 	},
 
+	getInfo: function () {
+		this.sendSocketNotification("GET_VIDEO");
+	},
+
+	socketNotificationReceived: function (notification, payload) {
+		if (notification === "BUTTON_PRESSED") {
+			this.processInfo(payload);
+		}
+		this.updateDom(this.config.initialLoadDelay);
+	},
+
 	// Override dom generator.
 	getDom: function() {
 		var wrapper = document.createElement("div");
-
-		wrapper.innerHTML = `<video controls poster="modules/MMM-MyVideoPlayer/posters/MM2splash.png" width='1200' height="675" id="player"></video>
-			<div id="videoSelect">
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/video_one.mp4" class="button">
-					<img src="modules/MMM-MyVideoPlayer/posters/one.jpg" width="234" height="132"></button>
-
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/two.mp4" class="button">
-					<img src="modules/MMM-MyVideoPlayer/posters/two.jpg" width="234" height="132"></button>
-
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/3.mp4" class="button">
-					<img src="modules/MMM-MyVideoPlayer/posters/three.jpg" width="234" height="132"></button>
-
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/fourth_video.mp4" class="button">
-					<img src="modules/MMM-MyVideoPlayer/posters/four.jpg" width="234" height="132"></button>
-
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/Rx_by_Theory.mp4" class="button">
-					<img src="modules/MMM-MyVideoPlayer/posters/five.jpg" width="234" height="132"></button>
-			</div>`;
-
-		console.log(wrapper.innerHTML);
 
 		var menu = document.createElement("span");
 		menu.className = "navMenu";
@@ -66,8 +57,35 @@ Module.register("MMM-MyVideoPlayer", {
 		// set a timer for 1 second from now to cehck for and add handlers for all our buttons
 		setTimeout(this.addHandlers, 1000);
 
+		wrapper.innerHTML = `<video controls poster="modules/MMM-MyVideoPlayer/posters/MM2splash.png" width='720' height="405" id="player"></video>
+			<div id="videoSelect">
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/video_one.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/one.jpg" width="75" height="42"></button>
+
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/two.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/two.jpg" width="75" height="42"></button>
+
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/3.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/three.jpg" width="75" height="42"></button>
+
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/fourth_video.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/four.jpg" width="75" height="42"></button>
+
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/five.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/five.jpg" width="75" height="42"></button>
+
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/Tesla - What You Give.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/six.jpg" width="75" height="42"></button>
+
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/EverLast - what it's like.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/seven.jpg" width="75" height="42"></button>
+			</div>`;
+
+		console.log(wrapper.innerHTML);
+
 		return wrapper;
 	},
+
 	swapVideo: function (button) {
 		Log.log("in handler for button="+this.getAttribute("data-video-src"));
 		self.player.src = this.getAttribute("data-video-src");
@@ -75,7 +93,7 @@ Module.register("MMM-MyVideoPlayer", {
 		self.player.play();
 	},
 
-	addHandlers: function () {
+	addHandlers: function() {
 		Log.log("add Handlers called");
 		// get the player object from the dom
 		self.player = document.getElementById("player");
@@ -92,12 +110,16 @@ Module.register("MMM-MyVideoPlayer", {
 				videoPlayButtons[i].addEventListener("click", self.swapVideo);
 			}
 		}
+
 		// not found, wait a little more
 		else {
 			Log.log("restarting timer");
 			setTimeout(self.addHandlers,1000)
 		}
 
+		//video ended event
+		video.on("ended", function () {
+			video[0].pause();
+		})
 	},
-
 });
