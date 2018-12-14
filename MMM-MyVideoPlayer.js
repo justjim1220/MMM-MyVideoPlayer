@@ -39,14 +39,11 @@ Module.register("MMM-MyVideoPlayer", {
 
 		wrapper.innerHTML = `<video class='controls' height='675' width='1200' id="player"></video>
 			<div id="videoSelect">
-				<button data-video-src="file:///modules/MMM-MyVideoPlayer/videos/five.mp4" class="button">Video 1</button>
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/video_one.mp4" class="button">Video 1</button>
 				<button data-video-src="modules/MMM-MyVideoPlayer/videos/two.mp4" class="button">Video 2</button>
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/EverLast - what it's like (EXPLICIT).mp4" class="button">Video 3</button>
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/Tesla-What You Give.mp4" class="button">Video 4</button>
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/I_Apologize.mp4" class="button">Video 5</button>
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/Rx_by_Theory.mp4" class="button">Video 6</button>
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/ten.mp4" class="button">Video 7</button>
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/Hallelujah.mp4.mp4" class="button">Video 8</button>
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/3.mp4" class="button">Video 3</button>
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/fourth_video.mp4" class="button">Video 4</button>
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/Rx_by_Theory.mp4" class="button">Video 5</button>
 			</div>`;
 
 		console.log(wrapper.innerHTML);
