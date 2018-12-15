@@ -4,15 +4,17 @@ A simple video player for MagicMirror
 The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules>3rd Party Module</a> of the <a href=https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror</a> 
 
 ## Screenshots
-ScreenShot of the output of the module, no video playing: 
+![ScreenShot of poster](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(442).png)
 
-![ScreenShot of no video playing](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20( ).png)
+![ScreenShot of button #1](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(443).png)
 
+![ScreenShot of button #2](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(444).png)
 
-ScreenShot of the output of the module, no video playing after button pressed: 
+![ScreenShot of button #3](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(445).png)
 
-![ScreenShot of video playing](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20( ).png)
+![ScreenShot of button #4](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(446).png)
 
+![ScreenShot of button #5](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(447).png)
 
 
 ## Using the module...
@@ -38,15 +40,16 @@ cd ~/MagicMirror/modules
 git clone https://github.com/justjim1220/MMM-MyVideoPlayer.git
 ```
 
-## Other Info...
+## Configurations...
 ```
 can add as many videos as you like.
+edit the MMM-MyVideoPlayer.js file within the section starting at line 60
+
 the buttons are set up so that the videos must coincide with the buttons. 
 may need to adjust the sizes of them - width of video player divided by number of buttons
 
 the player size has to be configered within the js file:
-
-IE: line 40  --->  wrapper.innerHTML = `<video class='controls' height='675' width='1200' id="player"></video>
+IE: line 60  --->  wrapper.innerHTML = `<video class='controls' height='675' width='1200' id="player"></video>
  
 Hope you all like it!
 ```
