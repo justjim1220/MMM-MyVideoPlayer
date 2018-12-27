@@ -14,8 +14,7 @@
 Module.register("MMM-MyVideoPlayer", {
 	// Default module config.
 	defaults: {
-		initialLoadDelay: 5150,
-		showBorder: true
+		initialLoadDelay: 5150
 	},
 
 	self:null,
@@ -59,26 +58,32 @@ Module.register("MMM-MyVideoPlayer", {
 
 		wrapper.innerHTML = `<video controls poster="modules/MMM-MyVideoPlayer/posters/MM2splash.png" width='720' height="405" id="player"></video>
 			<div id="videoSelect">
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/video_one.mp4" class="button">
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/one.mp4" class="button">
 					<img src="modules/MMM-MyVideoPlayer/posters/one.jpg" width="75" height="42"></button>
 
 				<button data-video-src="modules/MMM-MyVideoPlayer/videos/two.mp4" class="button">
 					<img src="modules/MMM-MyVideoPlayer/posters/two.jpg" width="75" height="42"></button>
 
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/3.mp4" class="button">
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/three.mp4" class="button">
 					<img src="modules/MMM-MyVideoPlayer/posters/three.jpg" width="75" height="42"></button>
 
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/fourth_video.mp4" class="button">
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/four.mp4" class="button">
 					<img src="modules/MMM-MyVideoPlayer/posters/four.jpg" width="75" height="42"></button>
 
 				<button data-video-src="modules/MMM-MyVideoPlayer/videos/five.mp4" class="button">
 					<img src="modules/MMM-MyVideoPlayer/posters/five.jpg" width="75" height="42"></button>
 
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/Tesla - What You Give.mp4" class="button">
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/six.mp4" class="button">
 					<img src="modules/MMM-MyVideoPlayer/posters/six.jpg" width="75" height="42"></button>
 
-				<button data-video-src="modules/MMM-MyVideoPlayer/videos/EverLast - what it's like.mp4" class="button">
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/seven.mp4" class="button">
 					<img src="modules/MMM-MyVideoPlayer/posters/seven.jpg" width="75" height="42"></button>
+
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/eight.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/eight.jpg" width="75" height="42"></button>
+
+				<button data-video-src="modules/MMM-MyVideoPlayer/videos/nine.mp4" class="button">
+					<img src="modules/MMM-MyVideoPlayer/posters/nine.jpg" width="75" height="42"></button>
 			</div>`;
 
 		console.log(wrapper.innerHTML);
@@ -118,8 +123,10 @@ Module.register("MMM-MyVideoPlayer", {
 		}
 
 		//video ended event
-		video.on("ended", function () {
-			video[0].pause();
-		})
+		var video = document.querySelector("video");
+		video.addEventListener("ended", function () {
+			video.load();
+			video.controls = false;
+		});
 	},
 });

@@ -1,8 +1,9 @@
 .MMM-MyVideoPlayer .player {
-	border: none;
-}}
+	margin-top: 50px;
+}
 
 .MMM-MyVideoPlayer .button {
+	position: relative;
 	width: 75px;
 	height: 42px;
 	z-index: 1;
@@ -11,30 +12,25 @@
 	align-items: center;
 	opacity: 1;
 	transition: 0.3s;
-	border: none;
-}}
+}
 
 .MMM-MyVideoPlayer .navMenu {
+	position: relative;
 	display: inline-block;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	background: none;
-	border: none;
-}}
+}
 
 .MMM-MyVideoPlayer .controls {
-	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 	margin-top: 5px;
 	padding-bottom: 3px;
-	border: none;
-}}
+}
 
 .MMM-MyVideoPlayer .button:hover {
 	opacity: 0.4;
 	cursor: pointer;
-	border: none;
-}}
+}
