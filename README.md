@@ -4,17 +4,25 @@ A simple video player for MagicMirror
 The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules>3rd Party Module</a> of the <a href=https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror</a> 
 
 ## Screenshots
-![ScreenShot of poster](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(442).png)
+![ScreenShot of poster](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(1).png)
 
-![ScreenShot of button #1](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(443).png)
+![ScreenShot of button #1](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(2).png)
 
-![ScreenShot of button #2](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(444).png)
+![ScreenShot of button #2](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(3).png)
 
-![ScreenShot of button #3](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(445).png)
+![ScreenShot of button #3](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(4).png)
 
-![ScreenShot of button #4](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(446).png)
+![ScreenShot of button #4](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(5).png)
 
-![ScreenShot of button #5](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(447).png)
+![ScreenShot of button #5](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(6).png)
+
+![ScreenShot of button #2](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(7).png)
+
+![ScreenShot of button #3](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(8).png)
+
+![ScreenShot of button #4](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(10).png)
+
+![ScreenShot of button #5](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(11).png)
 
 
 ## Using the module...
