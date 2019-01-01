@@ -1,0 +1,9 @@
+You must download youtube videos and the ending MUST be .mp4
+Must to have the names of the videos in either single words or separated by an underscore
+IE: One.mp4, Video_One.mp4, My_First_Video.mp4
+Put them in your videos directory and add them to your config.js file
+
+See example config
+
+A good video downloader:
+https://www.4kdownload.com/
