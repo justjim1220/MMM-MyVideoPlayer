@@ -11,6 +11,17 @@ module.exports = NodeHelper.create({
     },
     self:0,
 
+    // make Promise version of fs.readdir()
+    readdirAsync : function(dirname) {
+      return new Promise(function(resolve, reject) {
+	 fs.readdir(dirname, function(err, filenames){
+	    if (err) 
+	        reject(err); 
+	    else 
+	        resolve(filenames);
+	 });
+      });
+    },
     // functions from here on
     start: function() {
 	self=this;
@@ -18,12 +29,22 @@ module.exports = NodeHelper.create({
     },
 
     getVideos: function(){
-      var files = fs.readdirSync(self.config.videoDir);
-      return files;
+	try {
+       var files=fs.readdirSync(self.config.videoDir)
+	return files;      
+	}
+	catch(exception){
+		console.log("videoDir error ="+exception.message);
+	}
     },
     getPosters: function(){
-      var files = fs.readdirSync(self.config.posterDir);
-      return files;
+	try {
+	    var files=fs.readdirSync(self.config.posterDir)
+	    return files;
+	}
+	catch(exception){
+		console.log("posterDir error ="+exception.message);
+	}
     },
 
     socketNotificationReceived: function(notification, payload) {

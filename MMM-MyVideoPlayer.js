@@ -54,25 +54,33 @@ Module.register("MMM-MyVideoPlayer", {
 	},
 
 	socketNotificationReceived: function (notification, payload) {
-		Log.log("notification recxeived="+notification);
+		Log.log("notification received="+notification);
 		if (notification === "BUTTON_PRESSED") {
 			this.processInfo(payload);
 		}
 		else if(notification=="Videos"){
 		     this.videos=payload;
-		     Log.log("videos files"+this.videos);
+		     if(this.videos!=null){
+		     	Log.log("videos files="+this.videos);
+		     }
+		     else
+			Log.error("===>no video filenames returned, check the videosDir config entry");
 		}
 		else if(notification=="Posters"){
 		     this.posters=payload
-		     Log.log("posters files"+this.posters);
-		     self.buildPosterHash(this.posters);
-		     self.updateDom(self.config.initialLoadDelay);
+		     if(self.posters!=null){
+			     Log.log("posters files="+this.posters);
+			     self.buildPosterHash(this.posters);
+			     self.updateDom(self.config.initialLoadDelay);
+		     }
+		     else
+			Log.error("===>no video icon filenames returned, check the postersDir config entry");
 		}
 		
 	},
 
 	buildPosterHash: function(posters){
-		self.Hash={};
+		self.Hash={};		
 		for(var i=0;i<posters.length;i++){
 		    var work=posters[i];
 		    self.Hash[work.substring(0,work.indexOf('.'))]=work;
