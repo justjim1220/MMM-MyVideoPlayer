@@ -30,13 +30,19 @@ The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirro
 To use this module, add it to the modules array in the 'config/config.js' file:
 ```
 modules: [
-    {
+	{
 	disabled: false,
 	module: "MMM-MyVideoPlayer",
 	position: "middle_center",
 	config:
 	    {
 		initialLoadDelay: 5150,
+		videoDir: "videos",  // optional
+		posterDir: "posters",// optional
+		posterSize: {width:75,height:42},
+		menuDirection: "row",    // optional, menu direction	
+		playerSize: {width:720,height:405},
+
 	    }
 	},
     ]
@@ -51,13 +57,13 @@ git clone https://github.com/justjim1220/MMM-MyVideoPlayer.git
 ## Configurations...
 ```
 can add as many videos as you like.
-edit the MMM-MyVideoPlayer.js file within the section starting at line 60
+
 
 the buttons are set up so that the videos must coincide with the buttons. 
 may need to adjust the sizes of them - width of video player divided by number of buttons
 
-the player size has to be configered within the js file:
-IE: line 60  --->  wrapper.innerHTML = `<video class='controls' height='675' width='1200' id="player"></video>
+the player size has to be configered within the config file:
+
  
 Hope you all like it!
 ```
