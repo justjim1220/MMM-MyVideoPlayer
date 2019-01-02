@@ -42,6 +42,7 @@ modules: [
 		posterSize: {width:75,height:42},
 		menuDirection: "row",    // optional, menu direction	
 		playerSize: {width:720,height:405},
+		playerBackground:"MM2splash.png"
 
 	    }
 	},
