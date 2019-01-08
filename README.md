@@ -39,9 +39,9 @@ modules: [
 		initialLoadDelay: 5150,
 		videoDir: "videos",  // optional
 		posterDir: "posters",// optional
-		posterSize: {width:75,height:42},
+		posterSize: {width:92,height:52},
 		menuDirection: "row",    // optional, menu direction	
-		playerSize: {width:720,height:405},
+		playerSize: {width:920,height:518},
 		playerBackground:"MM2splash.png"
 
 	    }
@@ -59,13 +59,11 @@ git clone https://github.com/justjim1220/MMM-MyVideoPlayer.git
 ```
 can add as many videos as you like.
 
+the player will show the buttons in the order of how thery are in the poster dirsctory.
+0 through 9, or a,b,c...
+video names should coincide with the button names. 
+may need to adjust the sizes of buttons - width of video player divided by number of buttons
 
-the buttons are set up so that the videos must coincide with the buttons. 
-may need to adjust the sizes of them - width of video player divided by number of buttons
-
-the player size has to be configered within the config file:
-
- 
 Hope you all like it!
 ```
 ========================================================================================================================================
