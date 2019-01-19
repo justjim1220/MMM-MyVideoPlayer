@@ -1,9 +1,11 @@
 # MMM-MyVideoPlayer
+
 A simple video player for MagicMirror in which you provide the videos. Home videos included!
 
 The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules>3<sup>rd</sup> Party Module</a> of the <a href=https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror<sup>2</sup></a> 
 
 ## Screenshots
+
 ![ScreenShot of poster](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(1).png)
 
 ![ScreenShot of button #1](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(2).png)
@@ -58,12 +60,12 @@ npm install
 
 ## Configurations...
 
-can add as many videos as you like.
+can add as many videos as you like. (don't have to have 9 as per the example shown)
 ** All videos must be placed in the videos directory & All posters must be placed inside the posters directory **
 the player will show the buttons in the order of how thery are in the poster dirsctory.
 0 through 9, or a,b,c (recommended).
-video names should coincide with the button names. 
-may need to adjust the sizes of buttons - width of video player divided by number of buttons
+video names should coincide with the button names. (IE: video - a.mp4 / poster - a.jpg)
+may need to adjust the sizes of buttons - width of video player divided by number of buttons then subtract a few px's for space in between them.
 
 Hope you all like it!
 
