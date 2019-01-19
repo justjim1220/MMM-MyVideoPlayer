@@ -50,22 +50,23 @@ modules: [
 ```
 
 ## Install...
-```
+
 cd ~/MagicMirror/modules
 git clone https://github.com/justjim1220/MMM-MyVideoPlayer.git
-```
+cd MMM-MyVideoPlayer
+npm install
 
 ## Configurations...
-```
-can add as many videos as you like.
 
+can add as many videos as you like.
+** All videos must be placed in the videos directory & All posters must be placed inside the posters directory **
 the player will show the buttons in the order of how thery are in the poster dirsctory.
-0 through 9, or a,b,c...
+0 through 9, or a,b,c (recommended).
 video names should coincide with the button names. 
 may need to adjust the sizes of buttons - width of video player divided by number of buttons
 
 Hope you all like it!
-```
+
 ========================================================================================================================================
 
 ## Acknowledgements...
