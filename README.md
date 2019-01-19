@@ -1,7 +1,7 @@
 # MMM-MyVideoPlayer
-A simple video player for MagicMirror
+A simple video player for MagicMirror in which you provide the videos. Home videos included!
 
-The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules>3rd Party Module</a> of the <a href=https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror</a> 
+The MMM-MyVideoPlayer module is a <a href=https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules>3<sup>rd</sup> Party Module</a> of the <a href=https://github.com/MichMich/MagicMirror/tree/developMagicMirror>MagicMirror<sup>2</sup></a> 
 
 ## Screenshots
 ![ScreenShot of poster](https://github.com/justjim1220/MMM-MyVideoPlayer/blob/master/Screenshot%20(1).png)
@@ -37,11 +37,11 @@ modules: [
 	config:
 	    {
 		initialLoadDelay: 5150,
-		videoDir: "videos",  // optional
-		posterDir: "posters",// optional
-		posterSize: {width:92,height:52},
-		menuDirection: "row",    // optional, menu direction	
-		playerSize: {width:920,height:518},
+		videoDir: "videos",
+		posterDir: "posters",
+		posterSize: {width:45, height:25},
+		menuDirection: "row",
+		playerSize: {width:480, height:270},
 		playerBackground:"MM2splash.png"
 
 	    }
