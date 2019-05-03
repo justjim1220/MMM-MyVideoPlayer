@@ -44,7 +44,7 @@ modules: [
 		posterSize: {width:45, height:25},
 		menuDirection: "row",
 		playerSize: {width:480, height:270},
-		playerBackground:"MM2splash.png"
+		playerBackground:"MVPsplash.png"
 
 	    }
 	},
