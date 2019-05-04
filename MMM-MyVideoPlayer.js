@@ -21,7 +21,7 @@ Module.register("MMM-MyVideoPlayer", {
 		posterSize: {width:90, height:51},
 		menuDirection: "row",	
 		playerSize: {width:930, height:523},
-		playerBackground: "MM2splash.png",
+		playerBackground: "MVPsplash.png",
 	},
 
 	self:null,
